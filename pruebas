@@ -1,0 +1,2 @@
+select count(*) from registro;
+-- update logfile set ruta ='/usr/local/nginx/logs/m.eluniversal.access.log.1' where id=1;

@@ -1,0 +1,17 @@
+select dbdata2;
+DROP TABLE IF EXISTS logfile;
+CREATE TABLE logfile (id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL ,nombre VARCHAR(50) NOT NULL ,ruta VARCHAR(100) NOT NULL ,server INTEGER);
+INSERT INTO logfile VALUES(1,'nginx','/usr/local/nginx/logs/m.eluniversal.access.log',1);
+INSERT INTO logfile VALUES(2,'dyn','/usr/local/eu-dyn/logs/access.log.1',1);
+INSERT INTO logfile VALUES(3,'static','/usr/local/apacheTest-statics/logs/eu-access.log.1',1);
+INSERT INTO logfile VALUES(4,'dyn','/usr/local/eu-dyn/logs/access.log.1',2);
+INSERT INTO logfile VALUES(5,'static','/usr/local/apacheTest-statics/logs/eu-access.log.1',2);
+INSERT INTO logfile VALUES(6,'dyn','/usr/local/eu-dyn/logs/access.log.1',3);
+INSERT INTO logfile VALUES(7,'static','/usr/local/apacheTest-statics/logs/eu-access.log.1',3);
+DROP TABLE IF EXISTS registro;
+CREATE TABLE registro (id INTEGER PRIMARY KEY  AUTO_INCREMENT  NOT NULL ,ip VARCHAR(20),fecha DATETIME,metodo VARCHAR(20),cod_retorno VARCHAR(20),request VARCHAR(500),user_agent VARCHAR(500),referrer VARCHAR(500),resolution VARCHAR(500),logfile INTEGER);
+DROP TABLE IF EXISTS servidor;
+CREATE TABLE servidor (id INTEGER PRIMARY KEY  AUTO_INCREMENT  NOT NULL , nombre VARCHAR(50) NOT NULL , ip VARCHAR(20) NOT NULL );
+INSERT INTO servidor VALUES(1,'WEB01','204.228.236.6');
+INSERT INTO servidor VALUES(2,'WEB02','204.228.236.13');
+INSERT INTO servidor VALUES(3,'WEB03','204.228.236.17');
